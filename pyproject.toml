@@ -1,0 +1,10 @@
+[tool.ruff]
+# Set the maximum line length to 88 (same as Black).
+line-length = 88
+# Target Python version.
+target-version = "py312"
+
+[tool.ruff.lint]
+# Enable Pyflakes (`F`), PEP8 (`E`), isort (`I`), and Pyupgrade (`UP`) rules.
+select = ["E", "F", "I", "UP"]
+ignore = []
