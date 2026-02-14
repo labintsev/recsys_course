@@ -28,7 +28,9 @@ def random_recommend(n_recommendations: int = 10, seed: int = 42) -> list[int]:
     recommendations = []    
 
     ### Ваш код здесь ###
-
+    recommendations = ratings_df['movieId'].to_numpy()
+    recommendations = np.random.choice(recommendations, size=n_recommendations)
+    recommendations = recommendations.tolist()
     ### Конец вашего кода ###
 
     return recommendations
@@ -45,7 +47,7 @@ def top_n_recommend(
         min_ratings: Минимальное количество рейтингов для фильма
 
     Returns:
-        Список кортежей (movieId, avg_rating, rating_count, title)
+        Список кортежей (movieId, avg_rating, rating_count)
     """
     ratings_df, movies_df = load_data()
     top_n_recs = []
